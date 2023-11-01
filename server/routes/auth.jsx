@@ -2,7 +2,7 @@ const router = require("express").Router();
 const User = require("../models/user.jsx");
 const bcrypt = require("bcryptjs");
 
-// Sign Up Functionalities
+// Sign Up 
 router.post("/register", async (req, res) => {
   try {
     const { email, username, password } = req.body;
@@ -15,7 +15,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// Sign In Functionalities
+// Sign In 
 router.post("/signin", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });

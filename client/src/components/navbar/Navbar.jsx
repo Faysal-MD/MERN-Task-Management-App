@@ -4,7 +4,7 @@ import { FiUser } from "react-icons/fi";
 const Navbar = () => {
   return (
     <div>
-      <nav className="p-4">
+      <nav className="p-4 mx-auto max-w-screen-lg">
         <div className="flex items-center justify-between">
           <a
             href="#"

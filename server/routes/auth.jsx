@@ -30,7 +30,7 @@ router.post("/signin", async (req, res) => {
     if (!isPasswordCorrect) {
       res.status(400).json({ message: "Incorrect Password" });
     }
-    // if password is correct except the password give all the documents of the user
+    // if password is correct except it give all the documents of the user
     const { password, ...others } = user._doc;
     // gives all the documents of user
     res.status(200).json({ others });

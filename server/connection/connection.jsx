@@ -10,7 +10,7 @@ const connection = async (req, res) => {
       return;
     }
     await mongoose.connect(mongoUri).then(() => {
-      console.log("MongoDB Connected");
+      console.log("MongoDB Database Connected");
     });
   } catch (error) {
     res.status(400).json({

@@ -1,12 +1,17 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 const connection = async (req, res) => {
   try {
-    await mongoose
-      .connect("mongodb+srv://faysal:1234@cluster0.wqvenzk.mongodb.net/")
-      .then(() => {
-        console.log("MongoDB Connected");
-      });
+    const mongoUri = process.env.MONGODB_URI;
+
+    if (!mongoUri) {
+      console.error("MongoDB URI is not defined in the .env file");
+      return;
+    }
+    await mongoose.connect(mongoUri).then(() => {
+      console.log("MongoDB Connected");
+    });
   } catch (error) {
     res.status(400).json({
       message: "MongoDB Not Connected",

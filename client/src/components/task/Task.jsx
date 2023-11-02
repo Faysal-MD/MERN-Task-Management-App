@@ -1,5 +1,7 @@
 import { useState } from "react";
 import TaskCards from "./TaskCards";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Task = () => {
   const [Inputs, setInputs] = useState({ title: "", body: "" });
@@ -11,8 +13,14 @@ const Task = () => {
   };
 
   const submit = () => {
-    setArray([...Array, Inputs]);
-    setInputs({ title: "", body: "" });
+    if ((Inputs.title || Inputs.body) === "") {
+      toast.error("Title or Body should not be empty");
+    } else {
+      setArray([...Array, Inputs]);
+      setInputs({ title: "", body: "" });
+      toast.success("Your task is added");
+      toast.error("Your Task is Not Saved! Please SignUp First");
+    }
   };
 
   const del = (id) => {
@@ -20,7 +28,8 @@ const Task = () => {
     setArray([...Array]);
   };
   return (
-    <div className="w-full h-full flex flex-col items-center">
+    <div className="task w-full h-full flex flex-col items-center">
+      <ToastContainer />
       <div className="task-main text-center p-4">
         <div className="bg-gray-100 p-4 rounded-lg shadow-md w-96">
           <div>

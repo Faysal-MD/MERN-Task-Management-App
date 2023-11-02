@@ -1,9 +1,10 @@
 const Home = () => {
   return (
     <div className="w-full my-20 flex justify-center items-center">
-      <div className="text-center p-4 mx-auto max-w-screen-lg">
+      <div className="text-center p-4 mx-auto">
         <p className="text-6xl font-semibold">
-          <span className="text-orange-500">Organize</span> your <br /> work and life, finally
+          <span className="text-orange-500 font-bold">Organize</span> your <br /> work and
+          life, finally
         </p>
         <p className="text-xl text-gray-600">
           Become organized, focused, and calm with <br />

@@ -5,12 +5,9 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <nav className="p-4 mx-auto max-w-screen-lg">
+      <nav className="p-4 mx-auto">
         <div className="flex items-center justify-between">
-          <Link
-            to="/"
-            className="flex items-center space-x-3 text-red-600"
-          >
+          <Link to="/" className="flex items-center space-x-3 text-red-600">
             <div className="text-4xl">
               <AiOutlineSchedule />
             </div>

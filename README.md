@@ -13,7 +13,19 @@ There are used two schemas with MongoDB database:
 - localhost:1000/api/v1/signin
 
 ### For CRUD operations use the following APIs:
-- localhost:1000/api/v2/addTask (For Creating a Task use **POST** method)
-- localhost:1000/api/v2/getTasks/task_id (For getting all Tasks use **GET** method)
-- localhost:1000/api/v2/updateTask/task_id (For updating a Task use **PUT** method)
-- localhost:1000/api/v2/deleteTask/task_id (For Creating a Task use **DELETE** method
+- For Creating a Task use **POST** method:
+  ```
+  localhost:1000/api/v2/addTask
+  ```
+- For getting all Tasks use **GET** method:
+  ```
+  localhost:1000/api/v2/getTasks/task_id
+  ```
+- For updating a Task use **PUT** method:
+  ```
+  localhost:1000/api/v2/updateTask/task_id
+  ```
+- For Creating a Task use **DELETE** method:
+  ```
+  localhost:1000/api/v2/deleteTask/task_id 
+  ```

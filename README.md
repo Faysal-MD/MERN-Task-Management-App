@@ -4,6 +4,10 @@ For the backend part first of all install the following dependecies:
 ```
 npm i express mongoose nodemon dotenv cors bcryptjs
 ```
-There are used two schema with MongoDB database schemas
+There are used two schemas with MongoDB database:
 - User Schema for Signup and Signin functionalities
-- 
+- Task schema for CRUD operations
+
+### For testing the backend part use the follwing APIs:
+For Signup and Signin functionalities use the following APIs:
+- http://localhost:1000/api/v1/register

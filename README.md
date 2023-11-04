@@ -17,3 +17,4 @@ There are used two schemas with MongoDB database:
 - localhost:1000/api/v2/getTasks/task_id (For getting all Tasks use **GET** method)
 - localhost:1000/api/v2/updateTask/task_id (For updating a Task use **PUT** method)
 - localhost:1000/api/v2/deleteTask/task_id (For Creating a Task use **DELETE** method)
+- --

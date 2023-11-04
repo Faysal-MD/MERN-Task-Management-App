@@ -1,6 +1,40 @@
 import HeadingComp from "./HeadingComp";
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const history = useNavigate();
+  const [Inputs, setInputs] = useState({
+    email: "",
+    username: "",
+    password: "",
+  });
+
+  const change = (e) => {
+    const { name, value } = e.target;
+    setInputs({ ...Inputs, [name]: value });
+  };
+
+  const submit = async (e) => {
+    e.preventDefault();
+    await axios
+      .post("http://localhost:1000/api/v1/register", Inputs)
+      .then((response) => {
+        if (response.data.message === "User already exist") {
+          alert(response.data.message);
+        } else {
+          alert(response.data.message);
+          setInputs({
+            email: "",
+            username: "",
+            password: "",
+          });
+          history("/signin");
+        }
+      });
+  };
+
   return (
     <div className="w-full my-10 flex justify-center items-center">
       <div className="text-center p-4 mx-auto max-w-screen-lg">
@@ -15,6 +49,8 @@ const Signup = () => {
                 name="email"
                 className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
                 required
+                onChange={change}
+                value={Inputs.email}
               />
             </div>
 
@@ -28,6 +64,8 @@ const Signup = () => {
                 name="username"
                 className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
                 required
+                onChange={change}
+                value={Inputs.username}
               />
             </div>
 
@@ -41,13 +79,15 @@ const Signup = () => {
                 name="password"
                 className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
                 required
+                onChange={change}
+                value={Inputs.password}
               />
             </div>
 
-            
             <button
               type="submit"
               className="w-full py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
+              onClick={submit}
             >
               Sign Up
             </button>

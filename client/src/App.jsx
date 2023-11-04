@@ -4,8 +4,19 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Signup from "./components/authentication/Signup";
 import Signin from "./components/authentication/Signin";
 import Task from "./components/task/Task";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { authActions } from "./store";
 
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const id = sessionStorage.getItem("id");
+    if (id) {
+      dispatch(authActions.login());
+    }
+  }, []);
+
   return (
     <>
       <Router>

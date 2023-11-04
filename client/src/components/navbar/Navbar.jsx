@@ -1,8 +1,16 @@
 import { AiOutlineSchedule } from "react-icons/ai";
-import { FiUser } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { authActions } from "../../store";
 
 const Navbar = () => {
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  const dispatch = useDispatch();
+  const logout = () => {
+    sessionStorage.clear("id");
+    dispatch(authActions.logout());
+  };
+
   return (
     <div>
       <nav className="p-4 mx-auto">
@@ -13,6 +21,7 @@ const Navbar = () => {
             </div>
             <div className="text-3xl font-bold">task</div>
           </Link>
+
           <div className="ml-auto flex items-center space-x-4">
             <Link
               to="/"
@@ -21,6 +30,7 @@ const Navbar = () => {
             >
               Home
             </Link>
+
             <Link
               to="/task"
               aria-current="page"
@@ -28,30 +38,38 @@ const Navbar = () => {
             >
               Task
             </Link>
-            <Link
-              to="/signup"
-              // aria-current="page"
-              className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            >
-              Signup
-            </Link>
-            <Link
-              to="/signin"
-              // aria-current="page"
-              className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            >
-              Signin
-            </Link>
-            <Link
-              to="/logout"
-              aria-current="page"
-              className=" bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-            >
-              Logout
-            </Link>
-            <Link to="#" aria-current="page">
-              <FiUser className="inline  text-3xl" />
-            </Link>
+
+            {!isLoggedIn && (
+              <>
+                <Link
+                  to="/signup"
+                  aria-current="page"
+                  className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Signup
+                </Link>
+                <Link
+                  to="/signin"
+                  aria-current="page"
+                  className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Signin
+                </Link>
+              </>
+            )}
+
+            {isLoggedIn && (
+              <>
+                <Link
+                  to="/logout"
+                  aria-current="page"
+                  className=" bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                  onClick={logout}
+                >
+                  Logout
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </nav>

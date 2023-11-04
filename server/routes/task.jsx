@@ -5,8 +5,8 @@ const Task = require("../models/task.jsx");
 // Create
 router.post("/addTask", async (req, res) => {
   try {
-    const { title, body, email } = req.body;
-    const existingUser = await User.findOne({ email });
+    const { title, body, id } = req.body;
+    const existingUser = await User.findById(id);
     //   if user exists then give the title and body
     if (existingUser) {
       const task = new Task({ title, body, user: existingUser });
@@ -37,9 +37,9 @@ router.put("/updateTask/:id", async (req, res) => {
 // Delete
 router.delete("/deleteTask/:id", async (req, res) => {
   try {
-    const { email } = req.body;
-    const existingUser = await User.findOneAndUpdate(
-      { email },
+    const { id } = req.body;
+    const existingUser = await User.findByIdAndUpdate(
+      id,
       { $pull: { task: req.params.id } }
     );
     //   if user exists then give the title and body

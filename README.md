@@ -8,6 +8,9 @@ There are used two schemas with MongoDB database:
 - User Schema for Signup and Signin functionalities
 - Task schema for CRUD operations
 
-### For testing the backend part use the follwing APIs:
-For Signup and Signin functionalities use the following APIs:
+### For Signup and Signin functionalities use the following APIs:
 - http://localhost:1000/api/v1/register
+- http://localhost:1000/api/v1/signin
+
+### For CRUD operations use the following APIs:
+- http://localhost:1000/api/v2/addTask (For Create a Task)

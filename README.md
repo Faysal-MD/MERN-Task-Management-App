@@ -29,3 +29,6 @@ There are used two schemas with MongoDB database:
   ```
   localhost:1000/api/v2/deleteTask/task_id 
   ```
+## Frontend Part
+  For the frontend part I used **React.JS** and **Tailwind CSS**. In the component folder there are four folders they are authentication, home, navbar, and task. 
+  In the authentication folder there used Sign Up and Sign In forms, in the task folder there designed the task card using tailwind CSS.

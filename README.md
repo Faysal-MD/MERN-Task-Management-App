@@ -9,11 +9,11 @@ There are used two schemas with MongoDB database:
 - Task schema for CRUD operations
 
 ### For Signup and Signin functionalities use the following APIs:
-- http://localhost:1000/api/v1/register
-- http://localhost:1000/api/v1/signin
+- localhost:1000/api/v1/register
+- localhost:1000/api/v1/signin
 
 ### For CRUD operations use the following APIs:
-- http://localhost:1000/api/v2/addTask (For Creating a Task)
-- http://localhost:1000/api/v2/getTasks/task_id (For getting all Tasks)
-- http://localhost:1000/api/v2/updateTask/task_id (For updating a Task)
-- http://localhost:1000/api/v2/deleteTask/task_id (For Creating a Task)
+- localhost:1000/api/v2/addTask (For Creating a Task use **POST** method)
+- localhost:1000/api/v2/getTasks/task_id (For getting all Tasks use **GET** method)
+- localhost:1000/api/v2/updateTask/task_id (For updating a Task use **PUT** method)
+- localhost:1000/api/v2/deleteTask/task_id (For Creating a Task use **DELETE** method)

@@ -17,4 +17,10 @@ There are four folders in this project, they are: controller, database, model, a
 
 ## Frontend Part
 
-For the frontend part I used **React.JS** and **Tailwind CSS**. Here I make the UI for CRUD operations
+For the frontend part I used **Vite + React.JS** and **Tailwind CSS**. Here I make the UI for CRUD operations.
+
+For the backend part first of all install the following dependecies:
+
+```
+npm i axios react-dom react-redux react-router-dom redux redux-devtools-extension redux-thunk
+```

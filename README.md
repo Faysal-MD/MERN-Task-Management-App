@@ -8,6 +8,11 @@ For the backend part first of all install the following dependecies:
 npm i express mongoose nodemon dotenv cors
 ```
 
+For starting the project locally run the following command:
+```
+npm run dev
+```
+
 There are four folders in this project, they are: controller, database, model, and routes
 
 - In the controller folder there is a file named "task-controller.js" which is used for controlling the CRUD operations.
@@ -17,10 +22,15 @@ There are four folders in this project, they are: controller, database, model, a
 
 ## Frontend Part
 
-For the frontend part I used **Vite + React.JS** and **Tailwind CSS**. Here I make the UI for CRUD operations.
-
 For the backend part first of all install the following dependecies:
 
 ```
 npm i axios react-dom react-redux react-router-dom redux redux-devtools-extension redux-thunk
 ```
+
+For starting the project locally run the following command:
+```
+npm run dev
+```
+
+For the frontend part I used **Vite + React.JS** and **Tailwind CSS**. Here I make the UI for CRUD operations.

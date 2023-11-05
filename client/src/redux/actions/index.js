@@ -5,6 +5,7 @@ import {
   TOGGLE_TASK,
   UPDATE_TASK,
   DELETE_TASK,
+  TOGGLE_TAB,
 } from "./type";
 
 const API_URL = "http://localhost:8000";
@@ -52,4 +53,8 @@ export const deleteTask = (id) => async (dispatch) => {
   } catch (error) {
     console.log("Error while calling deleteTask API", error.message);
   }
+};
+
+export const toggleTab = (tab) => async (dispatch) => {
+  dispatch({ type: TOGGLE_TAB, selected: tab });
 };

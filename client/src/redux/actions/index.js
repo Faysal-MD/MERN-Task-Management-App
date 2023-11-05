@@ -1,5 +1,11 @@
 import axios from "axios";
-import { ADDNEW_TASK, GETALL_TASK, TOGGLE_TASK } from "./type";
+import {
+  ADDNEW_TASK,
+  GETALL_TASK,
+  TOGGLE_TASK,
+  UPDATE_TASK,
+  DELETE_TASK,
+} from "./type";
 
 const API_URL = "http://localhost:8000";
 
@@ -27,5 +33,23 @@ export const toggleTask = (id) => async (dispatch) => {
     dispatch({ type: TOGGLE_TASK, payload: res.data });
   } catch (error) {
     console.log("Error while calling toggleTask API", error.message);
+  }
+};
+
+export const updateTask = (id, data) => async (dispatch) => {
+  try {
+    const res = await axios.put(`${API_URL}/tasks/${id}`, { data });
+    dispatch({ type: UPDATE_TASK, payload: res.data });
+  } catch (error) {
+    console.log("Error while calling updateTask API", error.message);
+  }
+};
+
+export const deleteTask = (id) => async (dispatch) => {
+  try {
+    const res = await axios.delete(`${API_URL}/tasks/${id}`);
+    dispatch({ type: DELETE_TASK, payload: res.data });
+  } catch (error) {
+    console.log("Error while calling deleteTask API", error.message);
   }
 };

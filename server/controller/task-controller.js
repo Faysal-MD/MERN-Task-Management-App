@@ -27,12 +27,6 @@ export const getAllTasks = async (req, res) => {
 
 export const toggleTaskDone = async (req, res) => {
   try {
-    // const taskRef = await task.findById(req.params.id);
-    // const task = await task.findOneAndUpdate(
-    //   { _id: req.params.id },
-    //   { done: !taskRef.done }
-    // );
-
     const taskRef = await task.findById(req.params.id);
     const tasdk = await task.findOneAndUpdate(
       { _id: req.params.id },
@@ -40,6 +34,31 @@ export const toggleTaskDone = async (req, res) => {
     );
 
     await tasdk.save();
+
+    return res.status(200).json(tasdk);
+  } catch (error) {
+    return res.status(500).json(error.message);
+  }
+};
+
+export const updateTask = async (req, res) => {
+  try {
+    await task.findOneAndUpdate(
+      { _id: req.params.id },
+      { data: req.body.data }
+    );
+
+    const tasdk = await task.findById(req.params.id);
+
+    return res.status(200).json(tasdk);
+  } catch (error) {
+    return res.status(500).json(error.message);
+  }
+};
+
+export const deleteTask = async (req, res) => {
+  try {
+    const tasdk = await task.findByIdAndDelete(req.params.id);
 
     return res.status(200).json(tasdk);
   } catch (error) {

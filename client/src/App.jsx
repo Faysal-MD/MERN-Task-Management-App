@@ -1,12 +1,14 @@
 import Header from "./components/Header";
 import TaskForm from "./components/TaskForm";
+import Tasks from "./components/Tasks";
 
 const App = () => {
   return (
-    <div >
+    <>
       <Header />
       <TaskForm />
-    </div>
+      <Tasks />
+    </>
   );
 };
 

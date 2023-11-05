@@ -11,11 +11,11 @@ const Connection = () => {
   mongoose.connect(MONGODB_URI);
 
   mongoose.connection.on("connected", () => {
-    console.log("Database Connected Successfully");
+    console.log("Database is Connected Successfully");
   });
 
   mongoose.connection.on("disconnected", () => {
-    console.log("Database disconnected");
+    console.log("Database is disconnected");
   });
 
   mongoose.connection.on("error", () => {

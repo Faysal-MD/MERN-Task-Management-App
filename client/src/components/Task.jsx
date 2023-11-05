@@ -51,7 +51,7 @@ const Task = ({ task }) => {
           className="bg-red-500 hover:bg-red-700 text-white font-semibold py-1 px-2 rounded"
           onClick={() => dispatch(deleteTask(task._id))}
         >
-          Delete
+          Delete task
         </button>
       </div>
     </div>

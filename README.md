@@ -10,7 +10,7 @@ npm i express mongoose nodemon dotenv cors
 
 For starting the project locally run the following command:
 ```
-npm run dev
+npm start
 ```
 
 There are four folders in this project, they are: controller, database, model, and routes

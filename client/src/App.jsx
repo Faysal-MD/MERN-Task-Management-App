@@ -1,9 +1,11 @@
 import Header from "./components/Header";
+import TaskForm from "./components/TaskForm";
 
 const App = () => {
   return (
-    <div className="w-52 mx-auto">
+    <div >
       <Header />
+      <TaskForm />
     </div>
   );
 };

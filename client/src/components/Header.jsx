@@ -2,9 +2,9 @@
 
 const Header = () => {
   return (
-    <header>
+    <header className="w-52 mx-auto">
         <p className='my-20 text-5xl font-semibold text-gray-700'>
-            Task Lists
+            Task List
         </p>
     </header>
   )
